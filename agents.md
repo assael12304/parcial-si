@@ -1,11 +1,3 @@
-# agents.md — El Paso Zapatería
-
-Este archivo documenta cómo se usó inteligencia artificial (IA)
-para construir el proyecto, qué prompts se usaron y qué aportó
-cada agente al resultado final.
-
----
-
 ## Agente 1 — Arquitecto del catálogo
 
 | Atributo | Detalle |
