@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>El Paso — Zapatería Premium</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="navbar__logo">
+      <span class="navbar__logo-icon">EP</span>
+      <span class="navbar__logo-text">El Paso</span>
+    </div>
+    <div class="navbar__links">
+      <a href="#catalogo-section">Catálogo</a>
+      <a href="#categorias-section">Categorías</a>
+      <a href="#nosotros-section">Nosotros</a>
+    </div>
+    <button class="navbar__carrito" id="btn-carrito" aria-label="Ver carrito">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+      <span class="navbar__carrito-count" id="carrito-count">0</span>
+    </button>
+  </nav>
+
+  <header class="hero">
+    <div class="hero__bg">
+      <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1400&q=80" alt="Zapato deportivo destacado" class="hero__bg-img"/>
+      <div class="hero__overlay"></div>
+    </div>
+    <div class="hero__contenido">
+      <p class="hero__eyebrow">Nueva colección 2025</p>
+      <h1 class="hero__titulo">El par perfecto<br/><em>te está esperando</em></h1>
+      <p class="hero__descripcion">Más de 16 modelos cuidadosamente seleccionados para cada estilo, ocasión y personalidad.</p>
+      <div class="hero__acciones">
+        <a href="#catalogo-section" class="btn btn--primario">Ver catálogo</a>
+        <a href="#categorias-section" class="btn btn--secundario">Por categoría</a>
+      </div>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat"><strong>16</strong><span>modelos</span></div>
+      <div class="hero__stat"><strong>4</strong><span>categorías</span></div>
+      <div class="hero__stat"><strong>5</strong><span>colores</span></div>
+      <div class="hero__stat"><strong>★ 4.8</strong><span>calificación</span></div>
+    </div>
+  </header>
+
+  <div class="banda-confianza">
+    <span>🚚 Envío gratis desde $800</span>
+    <span class="separador">|</span>
+    <span>🔄 Cambios sin costo en 30 días</span>
+    <span class="separador">|</span>
+    <span>🛡️ Garantía de calidad</span>
+    <span class="separador">|</span>
+    <span>💳 Pago seguro</span>
+  </div>
+
+  <main>
+
+    <section id="categorias-section" class="seccion">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo">Explora por categoría</h2>
+        <p class="seccion__subtitulo">Elige el estilo que mejor se adapta a tu día</p>
+      </div>
+      <div class="categorias-grid">
+        <button class="categoria-card" data-cat="Deportivo">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=75" alt="Zapatos deportivos"/>
+          <div class="categoria-card__overlay"><h3>Deportivo</h3><p>4 modelos</p></div>
+        </button>
+        <button class="categoria-card" data-cat="Casual">
+          <img src="https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=600&q=75" alt="Zapatos casuales"/>
+          <div class="categoria-card__overlay"><h3>Casual</h3><p>4 modelos</p></div>
+        </button>
+        <button class="categoria-card" data-cat="Formal">
+          <img src="https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?w=600&q=75" alt="Zapatos formales"/>
+          <div class="categoria-card__overlay"><h3>Formal</h3><p>4 modelos</p></div>
+        </button>
+        <button class="categoria-card" data-cat="Sandalia">
+          <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?w=600&q=75" alt="Sandalias"/>
+          <div class="categoria-card__overlay"><h3>Sandalia</h3><p>4 modelos</p></div>
+        </button>
+      </div>
+    </section>
+
+    <section id="catalogo-section" class="seccion">
+      <div class="seccion__cabecera">
+        <h2 class="seccion__titulo">Catálogo completo</h2>
+        <p class="seccion__subtitulo">Busca, filtra y encuentra tu próximo par</p>
+      </div>
+      <div class="controles">
+        <div class="controles__campo">
+          <svg class="controles__icono" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input type="text" id="buscador" placeholder="Buscar por nombre..." />
+        </div>
+        <select id="filtro-categoria">
+          <option value="">Todas las categorías</option>
+          <option value="Deportivo">Deportivo</option>
+          <option value="Casual">Casual</option>
+          <option value="Formal">Formal</option>
+          <option value="Sandalia">Sandalia</option>
+        </select>
+        <select id="filtro-color">
+          <option value="">Todos los colores</option>
+          <option value="Negro">Negro</option>
+          <option value="Blanco">Blanco</option>
+          <option value="Cafe">Café</option>
+          <option value="Gris">Gris</option>
+          <option value="Azul">Azul</option>
+        </select>
+        <select id="orden">
+          <option value="recomendado">Recomendados</option>
+          <option value="precioAsc">Precio: menor a mayor</option>
+          <option value="precioDesc">Precio: mayor a menor</option>
+        </select>
+        <button id="btn-limpiar" class="btn-limpiar">Limpiar</button>
+      </div>
+      <div class="catalogo-meta">
+        <p id="contador" class="contador"></p>
+        <div class="filtros-activos" id="filtros-activos"></div>
+      </div>
+      <div id="catalogo" class="catalogo"></div>
+      <div id="sin-resultados" class="sin-resultados oculto">
+        <div class="sin-resultados__icono">🔍</div>
+        <h3>Sin resultados</h3>
+        <p>No encontramos zapatos con esos filtros.</p>
+        <button onclick="limpiarFiltros()" class="btn btn--primario">Ver todos</button>
+      </div>
+    </section>
+
+    <section id="nosotros-section" class="seccion nosotros">
+      <div class="nosotros__imagen">
+        <img src="https://images.unsplash.com/photo-1556906781-9a412961a28c?w=800&q=80" alt="Taller de zapatería"/>
+      </div>
+      <div class="nosotros__texto">
+        <p class="hero__eyebrow">Nuestra historia</p>
+        <h2>Calzado con propósito,<br/>diseño con alma</h2>
+        <p>En El Paso llevamos más de 10 años seleccionando los mejores modelos para quienes entienden que un buen par de zapatos no es un lujo, es una inversión en comodidad y estilo.</p>
+        <p>Cada modelo en nuestro catálogo pasa por un proceso de selección estricto: materiales de calidad, diseño funcional y precios justos.</p>
+        <div class="nosotros__numeros">
+          <div><strong>+10</strong><span>años de experiencia</span></div>
+          <div><strong>+2.000</strong><span>clientes satisfechos</span></div>
+          <div><strong>100%</strong><span>calidad garantizada</span></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__contenido">
+      <div class="footer__marca">
+        <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.75rem">
+          <span class="navbar__logo-icon">EP</span>
+          <span class="navbar__logo-text" style="color:white">El Paso</span>
+        </div>
+        <p>Zapatería premium. Calidad que se siente.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Navegación</h4>
+        <a href="#catalogo-section">Catálogo</a>
+        <a href="#categorias-section">Categorías</a>
+        <a href="#nosotros-section">Nosotros</a>
+      </div>
+      <div class="footer__links">
+        <h4>Categorías</h4>
+        <a href="#" onclick="filtrarPorCategoria('Deportivo')">Deportivo</a>
+        <a href="#" onclick="filtrarPorCategoria('Casual')">Casual</a>
+        <a href="#" onclick="filtrarPorCategoria('Formal')">Formal</a>
+        <a href="#" onclick="filtrarPorCategoria('Sandalia')">Sandalia</a>
+      </div>
+      <div class="footer__links">
+        <h4>Contacto</h4>
+        <span>📍 Ciudad de México</span>
+        <span>📞 55 1234 5678</span>
+        <span>📧 hola@elpaso.mx</span>
+      </div>
+    </div>
+    <div class="footer__base"><p>&copy; 2025 El Paso Zapatería &mdash; Proyecto educativo</p></div>
+  </footer>
+
+  <div id="modal" class="modal oculto" role="dialog" aria-modal="true">
+    <div class="modal__backdrop" id="modal-backdrop"></div>
+    <div class="modal__caja">
+      <button class="modal__cerrar" id="modal-cerrar" aria-label="Cerrar">&times;</button>
+      <div id="modal-contenido"></div>
+    </div>
+  </div>
+
+  <div id="panel-carrito" class="panel-carrito oculto">
+    <div class="panel-carrito__backdrop" id="carrito-backdrop"></div>
+    <div class="panel-carrito__caja">
+      <div class="panel-carrito__cabecera">
+        <h3>Tu carrito</h3>
+        <button id="cerrar-carrito" aria-label="Cerrar carrito">&times;</button>
+      </div>
+      <div id="carrito-items" class="carrito-items"></div>
+      <div class="panel-carrito__pie">
+        <div class="carrito-total">
+          <span>Total</span>
+          <strong id="carrito-total">$0.00</strong>
+        </div>
+        <button class="btn btn--primario" style="width:100%" onclick="alert('Gracias por tu compra (demo)')">Finalizar compra</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast oculto"><span id="toast-msg"></span></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
